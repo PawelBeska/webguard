@@ -6,7 +6,7 @@
     "php": ">=8.0.0",
     "illuminate/support": "8.*"
   },
-  "license": "proprietary",
+  "license": "MIT",
   "authors": [
     {
       "name": "Paweł Beśka",
@@ -17,6 +17,11 @@
   "autoload": {
     "psr-4": {
       "WebGuard\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "WebGuard\\Tests\\": "tests/"
     }
   }
 }
