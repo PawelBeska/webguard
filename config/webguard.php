@@ -12,7 +12,7 @@ return [
     |
     */
 
-    'webguard_public_key' => env('webguard_public_key'),
-    'webguard_private_key' => env('webguard_private_key'),
+    'public_key' => env('webguard_public_key'),
+    'private_key' => env('webguard_private_key'),
 
 ];
