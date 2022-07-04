@@ -24,7 +24,7 @@ class WebGuard
                 $this->privateKey
             );
 
-            return $captchaService->validate($token, $input)['data'];
+            return $captchaService->validate($token, $input)->data;
         } catch (\Exception $e) {
             return false;
         }
