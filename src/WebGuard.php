@@ -2,7 +2,7 @@
 
 namespace WebGuard;
 
-use Webguard\Services\CaptchaService;
+use WebGuard\Services\CaptchaService;
 
 class WebGuard
 {

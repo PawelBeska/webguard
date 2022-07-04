@@ -1,6 +1,6 @@
 <?php
 
-namespace Webguard\Services;
+namespace WebGuard\Services;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;

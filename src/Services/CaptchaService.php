@@ -1,6 +1,6 @@
 <?php
 
-namespace Webguard\Services;
+namespace WebGuard\Services;
 
 class CaptchaService extends ApiService
 {
