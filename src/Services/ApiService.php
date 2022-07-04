@@ -32,6 +32,8 @@ class ApiService
         } catch (GuzzleException $e) {
 
             return $e->getMessage();
+        } catch (\JsonException $e) {
+            return $e->getMessage();
         }
     }
 

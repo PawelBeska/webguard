@@ -6,6 +6,10 @@ use WebGuard\WebGuard;
 
 class WebGuardServiceProvider extends ServiceProvider
 {
+    
+    /**
+     * @return void
+     */
     public function register()
     {
         $this->mergeConfigFrom(__DIR__.'/../../config/webguard.php', 'webguard');
@@ -13,7 +17,10 @@ class WebGuardServiceProvider extends ServiceProvider
     }
 
 
-    public function boot()
+    /**
+     * @return void
+     */
+    public function boot(): void
     {
         if ($this->app->runningInConsole()) {
 
