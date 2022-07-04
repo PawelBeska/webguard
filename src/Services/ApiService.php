@@ -26,11 +26,14 @@ class ApiService
     protected function makeCall(string $method, string $url, array $headers = [], array $body = [])
     {
         try {
-            return json_decode($this->client->request($method, $url, [
-                ''
-            ], $body)->getBody());
+            return json_decode(
+                $this->client->request($method, $url, [
+
+                ], $body)->getBody(),
+                false, 512, JSON_THROW_ON_ERROR);
         } catch (GuzzleException $e) {
 
+            return $e;
         }
     }
 

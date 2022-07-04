@@ -23,7 +23,10 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "WebGuard\\Tests\\": "tests/"
+      "WebGuard\\Tests\\": "tests"
     }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "10.0.x-dev"
   }
 }
