@@ -30,7 +30,6 @@ class ApiService
                 RequestOptions::JSON => $body,
             ])->getBody(), false, 512, JSON_THROW_ON_ERROR);
         } catch (GuzzleException $e) {
-
             return $e->getMessage();
         } catch (\JsonException $e) {
             return $e->getMessage();

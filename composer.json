@@ -32,7 +32,10 @@
     "laravel": {
       "providers": [
         "WebGuard\\Providers\\WebGuardServiceProvider"
-      ]
+      ],
+      "aliases": {
+        "WebGuard": "WebGuard\\Facades\\WebGuard"
+      }
     }
   },
   "scripts": {
