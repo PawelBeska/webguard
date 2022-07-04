@@ -4,6 +4,7 @@ namespace WebGuard\Services;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\RequestOptions;
 
 class ApiService
 {
@@ -25,9 +26,9 @@ class ApiService
     protected function makeCall(string $method, string $url, array $body = [], array $headers = [],)
     {
         try {
-            return json_decode(
-                $this->client->request($method, $url, [
-                ], $body)->getBody());
+            return json_decode($this->client->request($method, $url, [
+                RequestOptions::JSON => $body,
+            ])->getBody(), false, 512, JSON_THROW_ON_ERROR);
         } catch (GuzzleException $e) {
 
             return $e->getMessage();
