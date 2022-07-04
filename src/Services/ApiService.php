@@ -8,10 +8,25 @@ use GuzzleHttp\RequestOptions;
 
 class ApiService
 {
+    /**
+     * @var \GuzzleHttp\Client
+     */
     protected Client $client;
+
+    /**
+     * @var string
+     */
     protected string $publicKey;
+
+    /**
+     * @var string
+     */
     protected string $privateKey;
 
+    /**
+     * @param string $publicKey
+     * @param string $privateKey
+     */
     public function __construct(string $publicKey, string $privateKey)
     {
         $this->publicKey = $publicKey;
@@ -21,9 +36,15 @@ class ApiService
         ]);
     }
 
+
     /**
+     * @param string $method
+     * @param string $url
+     * @param array $body
+     * @param array $headers
+     * @return mixed|string
      */
-    protected function makeCall(string $method, string $url, array $body = [], array $headers = [],)
+    protected function makeCall(string $method, string $url, array $body = [], array $headers = []): mixed
     {
         try {
             return json_decode($this->client->request($method, $url, [

@@ -6,8 +6,15 @@ use WebGuard\Services\CaptchaService;
 
 class WebGuard
 {
+    /**
+     * @var \WebGuard\Services\CaptchaService
+     */
     private CaptchaService $captchaService;
 
+    /**
+     * @param $publicKey
+     * @param $privateKey
+     */
     public function __construct($publicKey, $privateKey)
     {
         $this->captchaService = new CaptchaService(
