@@ -8,6 +8,19 @@ class WebGuardServiceProvider extends ServiceProvider
 {
     public function register()
     {
+        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'webguard');
         $this->app->singleton('WebGuard', WebGuard::class);
+    }
+
+
+    public function boot()
+    {
+        if ($this->app->runningInConsole()) {
+
+            $this->publishes([
+                __DIR__.'/../config/config.php' => config_path('webguard.php'),
+            ], 'config');
+
+        }
     }
 }
