@@ -18,10 +18,15 @@ class WebGuard
 
     public function verifyCaptcha(string $token, string $input): bool
     {
-        $captchaService = new CaptchaService(
-            $this->publicKey,
-            $this->privateKey
-        );
-        return $captchaService->validate($token, $input);
+        try {
+            $captchaService = new CaptchaService(
+                $this->publicKey,
+                $this->privateKey
+            );
+
+            return $captchaService->validate($token, $input);
+        } catch (\Exception $e) {
+            return false;
+        }
     }
 }

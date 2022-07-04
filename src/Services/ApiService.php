@@ -16,14 +16,13 @@ class ApiService
         $this->publicKey = $publicKey;
         $this->privateKey = $privateKey;
         $this->client = new Client([
-            'base_url' => 'https://api.webguard.pl/v1/',
             'timeout' => 2.0
         ]);
     }
 
     /**
      */
-    protected function makeCall(string $method, string $url, array $headers = [], array $body = [])
+    protected function makeCall(string $method, string $url, array $body = [], array $headers = [],)
     {
         try {
             return json_decode(
@@ -31,7 +30,7 @@ class ApiService
                 ], $body)->getBody());
         } catch (GuzzleException $e) {
 
-            return $e;
+            return $e->getMessage();
         }
     }
 
