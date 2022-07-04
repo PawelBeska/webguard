@@ -18,7 +18,7 @@
   "autoload": {
     "psr-4": {
       "WebGuard\\": "src/",
-      "WebGuard\\Services\\": "src/Services"
+      "WebGuard\\Services\\": "src/Services/"
     }
   },
   "autoload-dev": {
