@@ -28,9 +28,7 @@ class ApiService
         try {
             return json_decode(
                 $this->client->request($method, $url, [
-
-                ], $body)->getBody(),
-                false, 512, JSON_THROW_ON_ERROR);
+                ], $body)->getBody());
         } catch (GuzzleException $e) {
 
             return $e;
